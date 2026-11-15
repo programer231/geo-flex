@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Highstudent Guide</title>
+<style>
+:root{--bg:#f7f8f6;--fg:#1d2420;--muted:#5d6a62;--card:#fff;--line:#d9dfdb;--acc:#138a45;--blue:#2a5db0;--red:#d6453d;
+--def:#eaf0fb;--ex:#e9f6ee;--key:#fff3e3;--warn:#fdecea;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121613;--fg:#e6ebe7;--muted:#9aa89f;--card:#1a201c;--line:#2f3a33;--acc:#44c37b;--blue:#7aa6f0;--red:#ff7a70;--def:#1b2538;--ex:#183024;--key:#38291a;--warn:#3a1f1d}}
+:root[data-theme="dark"]{--bg:#121613;--fg:#e6ebe7;--muted:#9aa89f;--card:#1a201c;--line:#2f3a33;--acc:#44c37b;--blue:#7aa6f0;--red:#ff7a70;--def:#1b2538;--ex:#183024;--key:#38291a;--warn:#3a1f1d}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{display:flex;gap:2rem;max-width:1100px;margin:0 auto;padding:1.2rem}
+nav{width:210px;flex:none;align-self:flex-start;position:sticky;top:calc(1rem + env(safe-area-inset-top,0px))}
+nav b{display:block;font-size:1.15rem;color:var(--acc);margin-bottom:.6rem}
+nav a{display:block;padding:.28rem .6rem;border-left:3px solid var(--line);color:var(--muted);text-decoration:none;font-size:.92rem}
+nav a:hover{border-color:var(--acc);color:var(--fg)}
+main{min-width:0;flex:1}
+h1{font-size:2rem;margin:.2rem 0}h2{margin:2.4rem 0 .6rem;padding-top:.6rem;border-top:1px solid var(--line);font-size:1.45rem}h3{margin:1.4rem 0 .3rem;font-size:1.08rem}
+.sub{color:var(--muted);margin-top:0}
+.box{border-left:5px solid;border-radius:8px;padding:.7rem 1rem;margin:1rem 0}
+.box>b:first-child{display:block;font-size:.8rem;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.2rem}
+.def{background:var(--def);border-color:var(--blue)}.ex{background:var(--ex);border-color:var(--acc)}.key{background:var(--key);border-color:#e08a1e}.warn{background:var(--warn);border-color:var(--red)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:1rem;margin:1rem 0}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.9rem;min-width:520px}th,td{border-bottom:1px solid var(--line);padding:.45rem .6rem;text-align:left;vertical-align:top}th{color:var(--muted);font-weight:600}
+.card>svg{width:100%;height:auto;display:block}mjx-container svg{width:auto;max-width:none;display:inline-block}mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;max-width:100%}
+.ax{stroke:var(--muted);stroke-width:1}.gr{stroke:var(--line);stroke-width:1}.txt{fill:var(--muted);font-size:12px}
+.curve{fill:none;stroke:var(--blue);stroke-width:2.5}.tail{fill:var(--red);opacity:.45}
+.pt{fill:var(--blue)}.sen{stroke:var(--red);stroke-width:2.5;stroke-dasharray:6 4}.ols{stroke:var(--acc);stroke-width:2;stroke-dasharray:2 4}
+.ctl{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center;margin:.4rem 0}
+input[type=range]{flex:1;min-width:160px;accent-color:var(--acc)}
+button{font:inherit;padding:.4rem .9rem;border-radius:8px;border:1px solid var(--acc);background:var(--card);color:var(--fg);cursor:pointer}
+.res{font-weight:600}.ok{color:var(--red)}.no{color:var(--acc)}
+pre{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:.8rem;overflow-x:auto;font-size:.82rem}
+.flow{counter-reset:s;list-style:none;padding:0}.flow li{counter-increment:s;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:.45rem .8rem .45rem 2.6rem;margin:.4rem 0;position:relative}
+.flow li:before{content:counter(s);position:absolute;left:.7rem;top:.45rem;width:1.5rem;height:1.5rem;border-radius:50%;background:var(--acc);color:#fff;text-align:center;font-size:.85rem;line-height:1.5rem}
+@media(max-width:800px){.wrap{display:block;padding:.8rem}nav{position:static;width:auto;display:flex;flex-wrap:wrap;gap:.3rem;margin-bottom:1rem}nav b{width:100%}nav a{border:1px solid var(--line);border-radius:99px}}
+nav{max-height:calc(100vh - 2rem);overflow:auto}.try{background:var(--def);border-color:#8a5cd6}.box p{margin:.4rem 0}.box ul,.box ol{margin:.3rem 0}
+blockquote{margin:1rem 0;padding:.6rem 1rem;border-left:4px solid var(--acc);color:var(--muted);background:var(--card);border-radius:6px}blockquote p{margin:.2rem 0}
+.header-section-number{color:var(--acc);margin-right:.4rem}table{min-width:460px}th{white-space:nowrap}ul,ol{padding-left:1.4rem}li{margin:.2rem 0}nav{max-height:calc(100vh - 2rem);overflow:auto}.try{background:var(--def);border-color:#8a5cd6}.box p{margin:.4rem 0}.box ul,.box ol{margin:.3rem 0}
+blockquote{margin:1rem 0;padding:.6rem 1rem;border-left:4px solid var(--acc);color:var(--muted);background:var(--card);border-radius:6px}blockquote p{margin:.2rem 0}
+main{counter-reset:a}h2{counter-increment:a;counter-reset:b}h3{counter-increment:b}h2:not(.nonum):before{content:counter(a) " \00b7 ";color:var(--acc)}h3:not(.nonum):before{content:counter(a) "." counter(b) "  ";color:var(--acc)}table{min-width:460px}th{white-space:nowrap}ul,ol{padding-left:1.4rem}li{margin:.2rem 0}nav{max-height:calc(100vh - 2rem);overflow:auto}.try{background:var(--def);border-color:#8a5cd6}.box p{margin:.4rem 0}.box ul,.box ol{margin:.3rem 0}
+blockquote{margin:1rem 0;padding:.6rem 1rem;border-left:4px solid var(--acc);color:var(--muted);background:var(--card);border-radius:6px}blockquote p{margin:.2rem 0}
+main{counter-reset:a}h2{counter-increment:a;counter-reset:b}h3{counter-increment:b}h2:not(.nonum):before{content:counter(a) " \00b7 ";color:var(--acc)}h3:not(.nonum):before{content:counter(a) "." counter(b) "  ";color:var(--acc)}table{min-width:460px}th{white-space:nowrap}ul,ol{padding-left:1.4rem}li{margin:.2rem 0}nav{max-height:calc(100vh - 2rem);overflow:auto}.try{background:var(--def);border-color:#8a5cd6}.box p{margin:.4rem 0}.box ul,.box ol{margin:.3rem 0}
+blockquote{margin:1rem 0;padding:.6rem 1rem;border-left:4px solid var(--acc);color:var(--muted);background:var(--card);border-radius:6px}blockquote p{margin:.2rem 0}
+main{counter-reset:a}h2{counter-increment:a;counter-reset:b}h3{counter-increment:b}h2:not(.nonum):before{content:counter(a) " \00b7 ";color:var(--acc)}h3:not(.nonum):before{content:counter(a) "." counter(b) "  ";color:var(--acc)}table{min-width:460px}th{white-space:nowrap}ul,ol{padding-left:1.4rem}li{margin:.2rem 0}</style>
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'global'}};</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js"></script>
+</head>
+<body>
+<div class="wrap">
+<nav><b>Highstudent Guide</b><a href="#how-to-use-this-guide">1 · How to use this guide</a><a href="#sec:bases">2 · The basics in 15 minutes</a><a href="#overview-of-the-tests">3 · Overview of the tests</a><a href="#describing-the-series">4 · Describing the series</a><a href="#testing-normality">5 · Testing normality</a><a href="#stationarity">6 · Stationarity</a><a href="#autocorrelation">7 · Autocorrelation</a><a href="#detecting-a-trend">8 · Detecting a trend</a><a href="#detecting-a-break">9 · Detecting a break</a><a href="#seasonality">10 · Seasonality</a><a href="#relationship-between-two-variables">11 · Relationship between two
+variables</a><a href="#reading-a-complete-report">12 · Reading a complete report</a><a href="#sec:exos">13 · Exercises</a><a href="#appendix-a.-matching-the-website-report-wording">Appendix A.
+Matching the website report wording</a><a href="#appendix-b.-glossary">Appendix B.
+Glossary</a><a href="#appendix-c.-further-reading">Appendix C.
+Further reading</a></nav>
+<main><h1>Highstudent Guide</h1><p class="sub">Understanding statistical tests on time series. A guide for high-school students: Earth data (rainfall, temperature, snow, river flow…)</p><blockquote>
+<p>The website analyses a variable (for example rainfall) over a chosen
+area and period, then applies several statistical tests. This guide
+explains, in plain words and with examples, <em>what each test is
+looking for</em> and <em>how to read its result</em>. No prior knowledge
+of statistics is needed: we start from the mean and from
+probability.</p>
+</blockquote>
+<h2 id="how-to-use-this-guide">How to use this guide</h2>
+<p>First read Section <a href="#sec:bases">2</a> (about 15 minutes): it contains the
+ideas that every test relies on. Then each section presents one test or
+one group of tests, always in the same way: <em>the question asked</em>,
+<em>the idea</em>, <em>how to read the result</em>.</p>
+<p>Coloured boxes guide you:</p>
+<div class="box def"><b>Definition: new word</b>
+<p>A definition worth knowing.</p>
+</div>
+<div class="box ex"><b>Example: a concrete situation</b>
+<p>An example with numbers.</p>
+</div>
+<div class="box key"><b>Key takeaway</b>
+<p>The essentials, to memorise.</p>
+</div>
+<div class="box warn"><b>Warning</b>
+<p>A common mistake to avoid.</p>
+</div>
+<div class="box try"><b>Your turn</b>
+<p>A question to check your understanding (answers in Section <a href="#sec:exos">13</a>).</p>
+</div>
+<h2 id="sec:bases">The basics in 15 minutes</h2>
+<h3 id="a-time-series">A time series</h3>
+<div class="box def"><b>Definition: time series</b>
+<p>A <strong>time series</strong> is a sequence of measurements of the
+same quantity taken at successive dates: for example the total rainfall
+of each month since 1990.</p>
+</div>
+<p>A satellite or a weather station produces one value per day, per
+month or per year. The tests on the website answer questions about this
+sequence: <em>Is it going up? Did something change in 2005? Is there a
+seasonal cycle?</em></p>
+<h3 id="summarising-a-series-mean-median-standard-deviation">Summarising
+a series: mean, median, standard deviation</h3>
+<p>For <span class="math inline">\(n\)</span> values <span
+class="math inline">\(x_1, x_2, \dots, x_n\)</span>:</p>
+<ul>
+<li><p>the <strong>mean</strong> is <span
+class="math inline">\(\bar{x}=\dfrac{x_1+x_2+\dots+x_n}{n}\)</span>;</p></li>
+<li><p>the <strong>median</strong> is the middle value once the data are
+sorted (half of the values are below it, half above);</p></li>
+<li><p>the <strong>standard deviation</strong> <span
+class="math inline">\(\sigma\)</span> measures the spread around the
+mean: a large <span class="math inline">\(\sigma\)</span> means widely
+scattered values.</p></li>
+</ul>
+<p>The <strong>coefficient of variation</strong> <span
+class="math inline">\(CV=\dfrac{\sigma}{\bar{x}}\times 100\)</span>
+expresses the spread as a percentage of the mean. It allows a very
+variable quantity (rainfall, high CV) to be compared with a very regular
+one (temperature, low CV).</p>
+<div class="box ex"><b>Example: the median resists extreme values</b>
+<p>Rainfall over 5 months (mm): <span
+class="math inline">\(10,\;12,\;11,\;13,\;300\)</span>. The mean is
+<span class="math inline">\(69.2\)</span> mm, but the median is <span
+class="math inline">\(12\)</span> mm. A single flood pulled the mean
+upwards: the median describes a “typical” month better.</p>
+</div>
+<h3 id="slope-and-percentage">Slope and percentage</h3>
+<p>A trend is measured by a <strong>slope</strong>. For a line <span
+class="math inline">\(y=ax+b\)</span>, the number <span
+class="math inline">\(a\)</span> is the slope: if <span
+class="math inline">\(x\)</span> is time in years and <span
+class="math inline">\(y\)</span> is temperature in <span
+class="math inline">\(^\circ\)</span>C, then <span
+class="math inline">\(a=0.03\)</span> means “<span
+class="math inline">\(+0.03\,^\circ\)</span>C every year”, that is <span
+class="math inline">\(+0.3\,^\circ\)</span>C in 10 years.</p>
+<h3 id="null-hypothesis-and-alternative-hypothesis">Null hypothesis and
+alternative hypothesis</h3>
+<p>A statistical test works like a <strong>trial</strong>. The accused
+is presumed innocent until the evidence is strong enough.</p>
+<div class="box def"><b>Definition: hypotheses <span
+class="math inline">\(H_0\)</span> and <span
+class="math inline">\(H_1\)</span></b>
+<ul>
+<li><p><span class="math inline">\(H_0\)</span>, the <strong>null
+hypothesis</strong>, is the “nothing is happening” position: no trend,
+no break, normal data…</p></li>
+<li><p><span class="math inline">\(H_1\)</span>, the <strong>alternative
+hypothesis</strong>, is the opposite: “something is happening”.</p></li>
+</ul>
+</div>
+<p>We never <em>prove</em> <span class="math inline">\(H_0\)</span>. We
+only check whether the data are so surprising that <span
+class="math inline">\(H_0\)</span> can no longer be believed.</p>
+<h3 id="the-p-value">The p-value</h3>
+<div class="box def"><b>Definition: p-value</b>
+<p>The <strong>p-value</strong> is the probability of obtaining a result
+<em>at least as extreme</em> as the one observed, <em>assuming <span
+class="math inline">\(H_0\)</span> is true</em>. It is a number between
+0 and 1.</p>
+</div>
+<div class="box ex"><b>Example: a rigged coin?</b>
+<p>You toss a coin 10 times and get “heads” 10 times. If the coin is
+fair (<span class="math inline">\(H_0\)</span>), the probability of
+getting the same side 10 times is <span
+class="math inline">\(2\times\left(\tfrac12\right)^{10}=\tfrac{2}{1024}\approx
+0.002\)</span>. The p-value is therefore about <span
+class="math inline">\(0.002\)</span> (0.2%): this is very unlikely with
+a fair coin, so we doubt <span class="math inline">\(H_0\)</span>.</p>
+</div>
+<div class="card"><b>Try it: move the slider</b> (the test statistic \(Z\); if \(H_0\) is true, results follow this bell curve)
+<div class="ctl"><input id="z" type="range" min="0" max="4" step="0.01" value="1.96" aria-label="Z value"><span>Z = <b id="zv"></b></span></div>
+<svg id="bell" viewBox="0 0 600 220" role="img" aria-label="Bell curve with shaded tails showing the p-value"></svg><p class="res" id="pres"></p></div>
+<p><em>Figure 1. If <span class="math inline">\(H_0\)</span> is true,
+95% of results fall in the middle. A result in the red zones (5% in
+total) is rare: the p-value is then below <span
+class="math inline">\(0.05\)</span>.</em></p>
+<h3 id="the-threshold-alpha-and-the-decision">The threshold <span
+class="math inline">\(\alpha\)</span> and the decision</h3>
+<p>Before the test we fix a threshold, the <strong>significance
+level</strong> <span class="math inline">\(\alpha\)</span>, almost
+always <span class="math inline">\(\alpha=0.05\)</span> (5%). The rule
+is the same for <em>all</em> the tests on the website:</p>
+<div class="center">
+<div class="scroll"><table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Result</th>
+<th style="text-align: left;">Decision</th>
+<th style="text-align: left;">Sentence to use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span
+class="math inline">\(p&lt;0.05\)</span></td>
+<td style="text-align: left;">we <strong>reject</strong> <span
+class="math inline">\(H_0\)</span></td>
+<td style="text-align: left;">“Significant result: <span
+class="math inline">\(H_1\)</span> is plausible”</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(p\geq
+0.05\)</span></td>
+<td style="text-align: left;">we <strong>do not reject</strong> <span
+class="math inline">\(H_0\)</span></td>
+<td style="text-align: left;">“Not enough evidence”</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="box warn"><b>Warning</b>
+<p><span class="math inline">\(p\geq 0.05\)</span> does <em>not</em>
+mean “<span class="math inline">\(H_0\)</span> is true”. It means “the
+data are not enough to conclude”. As in court: “not guilty for lack of
+evidence” is not “proven innocent”.</p>
+</div>
+<h3 id="the-two-possible-errors">The two possible errors</h3>
+<div class="center">
+<div class="scroll"><table>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: left;"><span class="math inline">\(H_0\)</span>
+is actually true</th>
+<th style="text-align: left;"><span class="math inline">\(H_1\)</span>
+is actually true</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">We reject <span
+class="math inline">\(H_0\)</span></td>
+<td style="text-align: left;"><strong>False alarm</strong> (type I
+error), with probability <span
+class="math inline">\(\alpha\)</span></td>
+<td style="text-align: left;">Correct decision</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">We do not reject <span
+class="math inline">\(H_0\)</span></td>
+<td style="text-align: left;">Correct decision</td>
+<td style="text-align: left;"><strong>Missed detection</strong> (type II
+error)</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<h3 id="significant-does-not-mean-important">Significant does not mean
+important</h3>
+<p>With a lot of data, even a tiny trend becomes “significant”. So
+always look at <em>two</em> things: the p-value (is it real?)
+<em>and</em> the size of the effect, for example the slope in <span
+class="math inline">\(^\circ\)</span>C per year (is it important?).</p>
+<div class="box key"><b>Key takeaway</b>
+<ol>
+<li><p>A test asks a question whose “default” answer is <span
+class="math inline">\(H_0\)</span>.</p></li>
+<li><p><span class="math inline">\(p&lt;0.05\)</span>: we reject <span
+class="math inline">\(H_0\)</span>; <span class="math inline">\(p\geq
+0.05\)</span>: we cannot conclude.</p></li>
+<li><p>The p-value says whether an effect is <em>real</em>, not whether
+it is <em>large</em>.</p></li>
+</ol>
+</div>
+<h2 id="overview-of-the-tests">Overview of the tests</h2>
+<p>The website applies the tests in a logical order, summarised in
+Figure <a href="#fig:flow">2</a>. Table <a href="#tab:summary">1</a> gives, for
+each test, the question it asks, its <span
+class="math inline">\(H_0\)</span>, and what <span
+class="math inline">\(p&lt;0.05\)</span> means.</p>
+<ol class="flow"><li>Describe the series (mean, median, plot)</li><li>Normality: classical or non-parametric tests?</li><li>Stationarity and autocorrelation</li><li>Trend (Mann-Kendall, Sen's slope)</li><li>Break (Pettitt, SNHT, Buishand)</li><li>Seasonality (Kruskal-Wallis, STL)</li><li>Link with another variable (correlation, Granger)</li></ol>
+<p><em>Figure 2. The path of an analysis.</em></p>
+<div id="tab:summary">
+<div class="scroll"><table>
+<caption>Summary of the tests.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Test</th>
+<th style="text-align: left;">Question</th>
+<th style="text-align: left;"><span
+class="math inline">\(H_0\)</span></th>
+<th style="text-align: left;">If <span
+class="math inline">\(p&lt;0.05\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Shapiro-Wilk, D’Agostino, Jarque-Bera</td>
+<td style="text-align: left;">Do the data follow a normal
+distribution?</td>
+<td style="text-align: left;">They are normal</td>
+<td style="text-align: left;">Not normal</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ADF</td>
+<td style="text-align: left;">Is the series stable over time?</td>
+<td style="text-align: left;">It is not (unit root)</td>
+<td style="text-align: left;">Stationary</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">KPSS</td>
+<td style="text-align: left;">Same, with the opposite question</td>
+<td style="text-align: left;">It is stationary</td>
+<td style="text-align: left;">Non-stationary</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ljung-Box</td>
+<td style="text-align: left;">Does a value depend on the previous
+ones?</td>
+<td style="text-align: left;">No dependence</td>
+<td style="text-align: left;">Dependence</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mann-Kendall (and variants)</td>
+<td style="text-align: left;">Is there an increase or a decrease?</td>
+<td style="text-align: left;">No trend</td>
+<td style="text-align: left;">Trend</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Spearman (against time)</td>
+<td style="text-align: left;">Do the values rise with time?</td>
+<td style="text-align: left;">No link</td>
+<td style="text-align: left;">Link</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Pettitt, SNHT, Buishand</td>
+<td style="text-align: left;">Did an abrupt change occur?</td>
+<td style="text-align: left;">Homogeneous series</td>
+<td style="text-align: left;">Break</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Welch, Mann-Whitney</td>
+<td style="text-align: left;">Before and after the break, is it
+different?</td>
+<td style="text-align: left;">Same means (or distributions)</td>
+<td style="text-align: left;">Different</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Levene</td>
+<td style="text-align: left;">Has the variability changed?</td>
+<td style="text-align: left;">Same variances</td>
+<td style="text-align: left;">Different variances</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Kruskal-Wallis</td>
+<td style="text-align: left;">Do all months look alike?</td>
+<td style="text-align: left;">No seasonality</td>
+<td style="text-align: left;">Seasonality</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Pearson, Spearman, Kendall</td>
+<td style="text-align: left;">Do two variables vary together?</td>
+<td style="text-align: left;">No link</td>
+<td style="text-align: left;">Link</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Granger</td>
+<td style="text-align: left;">Does X help to predict Y?</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<h2 id="describing-the-series">Describing the series</h2>
+<p>Before any test, the website computes simple statistics: mean,
+median, standard deviation, minimum, maximum, coefficient of variation,
+and two indicators of <em>shape</em>.</p>
+<ul>
+<li><p><strong>Skewness</strong>: close to <span
+class="math inline">\(0\)</span>, the series is symmetric; positive,
+there are a few very large values (typical of rainfall); negative, a few
+very small ones.</p></li>
+<li><p><strong>Kurtosis</strong>: positive, extreme values are more
+frequent than usual.</p></li>
+</ul>
+<div class="box key"><b>Key takeaway</b>
+<p>If the mean is very different from the median, or if the skewness is
+large, the series probably contains extreme values. This affects the
+choice of tests (next section).</p>
+</div>
+<h2 id="testing-normality">Testing normality</h2>
+<p><strong>Question:</strong> do the data have the shape of a “bell”
+(normal distribution)?</p>
+<div class="box def"><b>Definition: normal distribution</b>
+<p>In a normal distribution, most values are close to the mean and very
+distant values are rare, symmetrically. The graph is the bell curve of
+Figure <a href="#fig:bell">1</a>.</p>
+</div>
+<p><strong>Why it matters:</strong> some tests (mean comparison,
+regression, Welch’s t-test) are reliable mainly when the data are
+roughly normal. Otherwise we prefer <strong>non-parametric</strong>
+tests (Mann-Kendall, Sen, Spearman, Mann-Whitney), which work on ranks
+(1st, 2nd, 3rd…) and resist extreme values.</p>
+<p>The website uses three tests (Shapiro-Wilk, D’Agostino, Jarque-Bera).
+For all of them, <span class="math inline">\(H_0\)</span> = “the data
+are normal”.</p>
+<ul>
+<li><p><span class="math inline">\(p&lt;0.05\)</span>: the data are
+<strong>not normal</strong>;</p></li>
+<li><p><span class="math inline">\(p\geq 0.05\)</span>: nothing prevents
+us from treating them as normal.</p></li>
+</ul>
+<p>Two plots help to check: the histogram (compared with a bell) and the
+<strong>Q-Q plot</strong>: if the points follow the line, the data are
+normal.</p>
+<div class="box warn"><b>Warning</b>
+<p>Rainfall is almost always non-normal (many small values, a few huge
+ones). The result “not normal” is therefore expected, which is why the
+website favours non-parametric tests.</p>
+</div>
+<h2 id="stationarity">Stationarity</h2>
+<div class="box def"><b>Definition: stationary series</b>
+<p>A series is <strong>stationary</strong> if its properties (mean,
+spread) do not drift over time. A series with a strong trend is not
+stationary.</p>
+</div>
+<p>The website uses two tests that ask the question <strong>in opposite
+ways</strong>:</p>
+<ul>
+<li><p><strong>ADF</strong>: <span class="math inline">\(H_0\)</span> =
+“non-stationary”. <span class="math inline">\(p&lt;0.05\)</span> <span
+class="math inline">\(\Rightarrow\)</span> stationary.</p></li>
+<li><p><strong>KPSS</strong>: <span class="math inline">\(H_0\)</span> =
+“stationary”. <span class="math inline">\(p&lt;0.05\)</span> <span
+class="math inline">\(\Rightarrow\)</span> non-stationary.</p></li>
+</ul>
+<div class="center">
+<div class="scroll"><table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">ADF</th>
+<th style="text-align: left;">KPSS</th>
+<th style="text-align: left;">Conclusion</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span
+class="math inline">\(p&lt;0.05\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(p\geq
+0.05\)</span></td>
+<td style="text-align: left;">Stationary (strong evidence)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(p\geq
+0.05\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(p&lt;0.05\)</span></td>
+<td style="text-align: left;">Non-stationary (strong evidence)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span
+class="math inline">\(p&lt;0.05\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(p&lt;0.05\)</span></td>
+<td style="text-align: left;">Contradictory results: be careful</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(p\geq
+0.05\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(p\geq
+0.05\)</span></td>
+<td style="text-align: left;">Not enough data to conclude</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="box key"><b>Key takeaway</b>
+<p>Two tests are better than one: when they disagree, we assert
+nothing.</p>
+</div>
+<h2 id="autocorrelation">Autocorrelation</h2>
+<div class="box def"><b>Definition: autocorrelation</b>
+<p><strong>Autocorrelation</strong> measures how much a value resembles
+the previous value. It ranges from <span
+class="math inline">\(-1\)</span> to <span
+class="math inline">\(+1\)</span>.</p>
+</div>
+<div class="box ex"><b>Example: temperature</b>
+<p>After a hot month, the next month is more likely to be hot too: the
+values are not independent, the autocorrelation is positive.</p>
+</div>
+<p><strong>Why it matters:</strong> tests often assume that every
+measurement brings <em>new</em> information. Interviewing 100 people
+from the same family gives less information than 100 randomly chosen
+people: with autocorrelation, 120 months “are worth” less than 120
+independent measurements. If we ignore this, we find too many
+“significant” trends.</p>
+<p>The website computes the lag-1 autocorrelation (between a month and
+the next) and the <strong>Ljung-Box</strong> test (<span
+class="math inline">\(H_0\)</span>: no autocorrelation; <span
+class="math inline">\(p&lt;0.05\)</span>: there is some). The ACF/PACF
+plots show the autocorrelation for each lag; bars that go beyond the
+blue band are significant.</p>
+<h2 id="detecting-a-trend">Detecting a trend</h2>
+<p><strong>Question:</strong> does the variable increase or decrease
+over time?</p>
+<div class="card"><b>Live example</b> (fictional temperatures, °C). Red dashed: Sen’s slope. Green dotted: ordinary regression (OLS). One outlier moves OLS much more than Sen.
+<svg id="trend" viewBox="0 0 600 260" role="img" aria-label="Temperature points with Sen and regression lines"></svg>
+<div class="ctl"><button id="out">Add / remove an outlier</button><span class="res" id="tres"></span></div></div>
+<p><em>Figure 3. The values fluctuate, but overall they rise: this is a
+trend.</em></p>
+<h3 id="the-mann-kendall-test">The Mann-Kendall test</h3>
+<p><strong>Idea:</strong> we compare <em>each value with all the
+following ones</em> and count: <span class="math inline">\(+1\)</span>
+if the later value is larger (increase), <span
+class="math inline">\(-1\)</span> if it is smaller (decrease), <span
+class="math inline">\(0\)</span> if equal. The sum of these points is
+called <span class="math inline">\(S\)</span>.</p>
+<ul>
+<li><p><span class="math inline">\(S\)</span> very positive: more
+increases than decreases <span
+class="math inline">\(\Rightarrow\)</span> upward trend;</p></li>
+<li><p><span class="math inline">\(S\)</span> very negative: downward
+trend;</p></li>
+<li><p><span class="math inline">\(S\)</span> close to <span
+class="math inline">\(0\)</span>: no clear trend.</p></li>
+</ul>
+<div class="box ex"><b>Example: computing <span class="math inline">\(S\)</span> by
+hand</b>
+<p>Series: <span class="math inline">\(3,\;4,\;6,\;5,\;8\)</span>. We
+compare each value with the following ones.</p>
+<div class="center">
+<div class="scroll"><table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Value</th>
+<th style="text-align: left;">Compared with the next ones</th>
+<th style="text-align: left;">Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span
+class="math inline">\(3\)</span></td>
+<td style="text-align: left;">with <span
+class="math inline">\(4,6,5,8\)</span>: <span
+class="math inline">\(+,+,+,+\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(+4\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span
+class="math inline">\(4\)</span></td>
+<td style="text-align: left;">with <span
+class="math inline">\(6,5,8\)</span>: <span
+class="math inline">\(+,+,+\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(+3\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span
+class="math inline">\(6\)</span></td>
+<td style="text-align: left;">with <span
+class="math inline">\(5,8\)</span>: <span
+class="math inline">\(-,+\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(0\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span
+class="math inline">\(5\)</span></td>
+<td style="text-align: left;">with <span
+class="math inline">\(8\)</span>: <span
+class="math inline">\(+\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(+1\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><strong>Total</strong> <span
+class="math inline">\(S\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(\mathbf{+8}\)</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>There are <span class="math inline">\(10\)</span> pairs in total, so
+<span class="math inline">\(S\)</span> is at most <span
+class="math inline">\(10\)</span>. We compute <span
+class="math inline">\(\tau=\dfrac{S}{10}=0.8\)</span>: a clear upward
+trend. (With only 5 values the test is not reliable: aim for at least 10
+values, and ideally many more.)</p>
+</div>
+<p>The website converts <span class="math inline">\(S\)</span> into a
+statistic <span class="math inline">\(Z\)</span> and then into a
+p-value. Just remember: <span class="math inline">\(|Z|&gt;1.96\)</span>
+is the same as <span class="math inline">\(p&lt;0.05\)</span>, and the
+<strong>sign</strong> of <span class="math inline">\(Z\)</span> gives
+the direction (positive = increase, negative = decrease). The
+coefficient <span class="math inline">\(\tau\)</span> (Kendall’s tau,
+between <span class="math inline">\(-1\)</span> and <span
+class="math inline">\(+1\)</span>) measures how clear the trend is.</p>
+<h3 id="sens-slope-by-how-much-does-it-change">Sen’s slope: by how much
+does it change?</h3>
+<p>Mann-Kendall says <em>whether</em> there is a trend, not <em>by how
+much</em>. <strong>Sen’s slope</strong> computes the slope between every
+pair of points, then takes the <strong>median</strong> of all these
+slopes.</p>
+<div class="box ex"><b>Example: Sen’s slope for <span
+class="math inline">\(3,4,6,5,8\)</span></b>
+<p>The 10 slopes (change in value divided by change in time), sorted,
+are <span
+class="math inline">\(-1;\;0.5;\;0.67;\;1;\;1;\;1.25;\;1.33;\;1.5;\;2;\;3\)</span>.
+The median is the average of the 5<sup>th</sup> and 6<sup>th</sup>:
+<span class="math inline">\(\dfrac{1+1.25}{2}=1.125\)</span> per time
+step. The values <span class="math inline">\(-1\)</span> and <span
+class="math inline">\(3\)</span> (extremes) have almost no effect.</p>
+</div>
+<p>The website gives the slope <strong>per year</strong>, with a
+<strong>95% confidence interval</strong>.</p>
+<ul>
+<li><p>If the interval <strong>does not contain <span
+class="math inline">\(0\)</span></strong> (for example <span
+class="math inline">\([0.12,\,0.48]\)</span>), the trend is
+significant.</p></li>
+<li><p>If it contains <span class="math inline">\(0\)</span> (for
+example <span class="math inline">\([-0.10,\,0.30]\)</span>), we cannot
+rule out a zero slope.</p></li>
+</ul>
+<p>The website also reports the <strong>total change over the
+period</strong>, as a percentage of the mean.</p>
+<h3 id="the-other-trend-tests">The other trend tests</h3>
+<ul>
+<li><p><strong>Modified Mann-Kendall (Hamed-Rao)</strong>: the same
+test, corrected for the effect of autocorrelation. The report shows a
+<em>variance factor</em>: the larger it is, the more autocorrelation was
+weakening the classical test. <strong>If the two results differ, we keep
+the modified one.</strong></p></li>
+<li><p><strong>Seasonal Mann-Kendall</strong>: for monthly data,
+Mann-Kendall is applied <em>separately to each month</em> (all
+Januaries, then all Februaries…) and the results are combined: the
+seasons can therefore not be mistaken for a trend.</p></li>
+<li><p><strong>Linear regression (OLS)</strong>: we draw the line that
+passes as close as possible to the points. It gives a slope and an <span
+class="math inline">\(R^2\)</span> (the share of variation explained by
+time, between 0 and 1). It is sensitive to extreme values and assumes
+roughly normal data.</p></li>
+<li><p><strong>Spearman correlation (values against time)</strong>:
+measures whether the <em>rank</em> of a value increases with time
+(between <span class="math inline">\(-1\)</span> and <span
+class="math inline">\(+1\)</span>).</p></li>
+</ul>
+<div class="box key"><b>Key takeaway</b>
+<p>A trend is convincing when <strong>several tests agree</strong>
+(modified Mann-Kendall, Spearman, regression), Sen’s slope is consistent
+with them, and its confidence interval does not contain <span
+class="math inline">\(0\)</span>.</p>
+</div>
+<h2 id="detecting-a-break">Detecting a break</h2>
+<p><strong>Question:</strong> did an abrupt change occur at some date?
+(station moved, instrument changed, climatic event…)</p>
+<div class="card"><b>Live example</b> (fictional rainfall, mm): the Pettitt test is computed in your browser.
+<svg id="brk" viewBox="0 0 600 260" role="img" aria-label="Rainfall series with detected break"></svg><p class="res" id="bres"></p></div>
+<p><em>Figure 4. The average level changes abruptly around 2005
+(fictional data).</em></p>
+<p>The website uses four tools. For the first three, <span
+class="math inline">\(H_0\)</span> = “the series is
+<strong>homogeneous</strong> (no break)”.</p>
+<ul>
+<li><p><strong>Pettitt</strong>: we cut the series at every possible
+date and look for the one where the two pieces differ the most. It also
+gives the <em>probable date</em> of the break.</p></li>
+<li><p><strong>SNHT</strong>: compares the mean before and after each
+date, then keeps the largest difference. The p-value is obtained by
+<em>simulation</em>: the computer creates thousands of random series
+without a break and checks how exceptional the observed difference
+is.</p></li>
+<li><p><strong>Buishand</strong>: we accumulate the deviations from the
+mean. Without a break, this running total stays near <span
+class="math inline">\(0\)</span>; with a break, it drifts far to one
+side before coming back.</p></li>
+<li><p><strong>von Neumann ratio</strong>: close to <span
+class="math inline">\(2\)</span> for a random series; clearly different
+from <span class="math inline">\(2\)</span> suggests dependence or a
+break. It has no p-value here.</p></li>
+</ul>
+<h3 id="comparing-before-and-after">Comparing before and after</h3>
+<p>If a break is found, the website compares the two periods:</p>
+<ul>
+<li><p><strong>Welch’s t-test</strong>: are the means different?
+(assumes fairly normal data)</p></li>
+<li><p><strong>Mann-Whitney</strong>: are the values of one period
+systematically larger? (non-parametric)</p></li>
+<li><p><strong>Levene</strong>: has the variability changed?</p></li>
+</ul>
+<p>For all of them, <span class="math inline">\(p&lt;0.05\)</span> means
+“the two periods are different”.</p>
+<div class="box key"><b>Key takeaway</b>
+<p>A break is credible when <strong>Pettitt, SNHT and Buishand point to
+about the same date</strong>. You must then look for a real explanation
+(a break can be a measurement problem, not a natural phenomenon).</p>
+</div>
+<h2 id="seasonality">Seasonality</h2>
+<p><strong>Question:</strong> does the variable follow an annual
+cycle?</p>
+<ul>
+<li><p><strong>Kruskal-Wallis</strong> compares the 12 months: <span
+class="math inline">\(H_0\)</span> = “all months look alike”. <span
+class="math inline">\(p&lt;0.05\)</span>: at least one month differs,
+there is seasonality.</p></li>
+<li><p><strong>STL decomposition</strong>: the series is separated into
+three pieces, <span class="math display">\[\text{series} \;=\;
+\text{trend} \;+\; \text{season} \;+\; \text{residual (the
+rest)}.\]</span> The website gives a <strong>seasonal strength</strong>
+and a <strong>trend strength</strong> between <span
+class="math inline">\(0\)</span> and <span
+class="math inline">\(1\)</span>: close to <span
+class="math inline">\(1\)</span>, the component dominates; close to
+<span class="math inline">\(0\)</span>, it is weak.</p></li>
+</ul>
+<div class="box ex"><b>Example: Morocco</b>
+<p>In a Mediterranean climate, rainfall is higher in winter than in
+summer: Kruskal-Wallis gives a tiny p-value, and the seasonal strength
+is high.</p>
+</div>
+<h2 id="relationship-between-two-variables">Relationship between two
+variables</h2>
+<p><strong>Question:</strong> do two variables (for example rainfall and
+river flow) evolve together?</p>
+<ul>
+<li><p><strong>Pearson</strong> (<span class="math inline">\(r\)</span>,
+from <span class="math inline">\(-1\)</span> to <span
+class="math inline">\(+1\)</span>): <em>linear</em> link. <span
+class="math inline">\(+1\)</span>: rise together; <span
+class="math inline">\(-1\)</span>: one rises when the other falls; <span
+class="math inline">\(0\)</span>: no linear link.</p></li>
+<li><p><strong>Spearman</strong> and <strong>Kendall</strong>:
+<em>monotonic</em> link, computed on ranks. More robust to extreme
+values.</p></li>
+<li><p><strong>Lagged correlation</strong>: one series is shifted in
+time to see whether one <em>precedes</em> the other. Example: river flow
+reacts to rainfall 2 months later, so the best lag is <span
+class="math inline">\(+2\)</span>.</p></li>
+<li><p><strong>Granger</strong>: do past values of <span
+class="math inline">\(X\)</span> help to <em>predict</em> <span
+class="math inline">\(Y\)</span>?</p></li>
+</ul>
+<div class="box warn"><b>Warning</b>
+<p><strong>Correlation is not causation.</strong> Ice-cream sales and
+drownings both rise in summer without one causing the other: the heat
+explains both. A “Granger” result only means “useful for prediction”,
+not “real cause”.</p>
+</div>
+<h2 id="reading-a-complete-report">Reading a complete report</h2>
+<p>Here is a fictional extract of a report, for monthly rainfall
+(mm):</p>
+<div class="center">
+<pre><code>Mann-Kendall            stat=-2.91  p=0.0036 -&gt; decreasing
+Modified MK (Hamed-Rao) stat=-1.80  p=0.0719 -&gt; no trend (variance factor=2.60)
+Sen&#39;s slope (per year)  -0.48  95% CI [-0.81, -0.12] mm/year
+Pettitt                 stat=1450   p=0.0210 -&gt; BREAK (at 2005-04-01)</code></pre>
+</div>
+<p><strong>Reading.</strong></p>
+<ol>
+<li><p>The classical Mann-Kendall sees a decrease (<span
+class="math inline">\(p&lt;0.05\)</span>) …</p></li>
+<li><p>… but the <em>modified</em> test no longer confirms it (<span
+class="math inline">\(p=0.0719&gt;0.05\)</span>): the factor <span
+class="math inline">\(2.60\)</span> shows strong autocorrelation that
+was exaggerating the first conclusion. We keep the modified
+test.</p></li>
+<li><p>Sen’s slope (<span class="math inline">\(-0.48\)</span> mm/year)
+is negative, but its interval only just excludes <span
+class="math inline">\(0\)</span> while the modified test is not
+significant: we must stay cautious.</p></li>
+<li><p>Pettitt detects a break in April 2005 (<span
+class="math inline">\(p=0.021\)</span>): it is wise to confirm it with
+SNHT and Buishand, then look for a possible cause.</p></li>
+</ol>
+<p><strong>Honest conclusion:</strong> we cannot claim a gradual
+decrease in rainfall, but a change of level around 2005 is likely.</p>
+<div class="box warn"><b>Warning</b>
+<p><strong>Classic pitfalls</strong></p>
+<ul>
+<li><p><strong>Too many tests:</strong> with <span
+class="math inline">\(20\)</span> tests at 5%, the probability of
+getting <em>at least one</em> false alarm is <span
+class="math inline">\(1-0.95^{20}\approx 64\%\)</span>. A single
+isolated “significant” result is not proof.</p></li>
+<li><p><strong>Series too short:</strong> over fewer than <span
+class="math inline">\(10\)</span> years, tests lack power.</p></li>
+<li><p><strong>Missing data:</strong> gaps can create false trends or
+false breaks.</p></li>
+<li><p><strong>Pixel too large:</strong> a small area seen by a
+low-resolution satellite is represented by only a few pixels.</p></li>
+</ul>
+</div>
+<p><strong>Checklist.</strong></p>
+<ol>
+<li><p>Is the period long enough, without large gaps?</p></li>
+<li><p>What is the unit of the variable (mm, <span
+class="math inline">\(^\circ\)</span>C, m<span
+class="math inline">\(^3\)</span>/s)?</p></li>
+<li><p>Are the data normal? If not, read the non-parametric
+tests.</p></li>
+<li><p>Is there autocorrelation? If so, read the <em>modified</em>
+Mann-Kendall.</p></li>
+<li><p>Do several tests agree?</p></li>
+<li><p>Is the effect <em>large</em> (slope, percentage) or only
+significant?</p></li>
+<li><p>Is a real cause plausible?</p></li>
+</ol>
+<h2 id="sec:exos">Exercises</h2>
+<div class="box try"><b>Your turn</b>
+<ol>
+<li><p>A test gives <span class="math inline">\(p=0.03\)</span> with
+<span class="math inline">\(\alpha=0.05\)</span>. What do we decide
+about <span class="math inline">\(H_0\)</span>?</p></li>
+<li><p>Mann-Kendall gives <span class="math inline">\(p=0.20\)</span>
+and Sen’s slope is <span class="math inline">\(-0.5\)</span> mm/year. Is
+there a significant trend?</p></li>
+<li><p>ADF: <span class="math inline">\(p=0.40\)</span>; KPSS: <span
+class="math inline">\(p=0.01\)</span>. Is the series
+stationary?</p></li>
+<li><p>Compute <span class="math inline">\(S\)</span> and <span
+class="math inline">\(\tau\)</span> for the series <span
+class="math inline">\(10,\;9,\;8,\;6,\;5\)</span>.</p></li>
+<li><p>We run 20 tests at <span
+class="math inline">\(\alpha=0.05\)</span> on purely random data. How
+many false alarms do we expect on average?</p></li>
+<li><p>Sen’s slope of a monthly series is <span
+class="math inline">\(0.0025\,^\circ\)</span>C per month. What is the
+slope per year? What is the change over 30 years?</p></li>
+<li><p>Does a Pearson coefficient of <span
+class="math inline">\(r=0.85\)</span> between rainfall and river flow
+prove that rainfall causes the flood?</p></li>
+</ol>
+</div>
+<h3 class="nonum" class="unnumbered" id="answers">Answers</h3>
+<ol>
+<li><p><span class="math inline">\(0.03&lt;0.05\)</span>: we
+<strong>reject</strong> <span class="math inline">\(H_0\)</span>
+(significant result).</p></li>
+<li><p>No: <span class="math inline">\(p=0.20\geq 0.05\)</span>. The
+observed slope may be due to chance.</p></li>
+<li><p>ADF does not reject (no evidence of stationarity) and KPSS
+rejects (non-stationary): the series is
+<strong>non-stationary</strong>.</p></li>
+<li><p>All pairs are decreases: <span
+class="math inline">\(S=-(4+3+2+1)=-10\)</span>, <span
+class="math inline">\(\tau=-10/10=-1\)</span>: a perfect
+decrease.</p></li>
+<li><p><span class="math inline">\(20\times 0.05=1\)</span> false alarm
+on average.</p></li>
+<li><p><span class="math inline">\(0.0025\times
+12=0.03\,^\circ\)</span>C per year; over 30 years: <span
+class="math inline">\(0.9\,^\circ\)</span>C.</p></li>
+<li><p>No: correlation is not causation (even if the physical link is
+plausible here, it must be justified by something other than <span
+class="math inline">\(r\)</span>).</p></li>
+</ol>
+<h2 class="nonum" class="unnumbered"
+id="appendix-a.-matching-the-website-report-wording">Appendix A.
+Matching the website report wording</h2>
+<p>The results displayed by the website use the following words. Here is
+what they mean.</p>
+<div class="center">
+<div class="scroll"><table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Word displayed</th>
+<th style="text-align: left;">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Normal / NOT normal</td>
+<td style="text-align: left;">Data are normal / not normal</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Stationary / Unit root /
+NON-stationary</td>
+<td style="text-align: left;">Series is stable / not stable (see the
+stationarity section)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Autocorrelated / No autocorrelation</td>
+<td style="text-align: left;">Successive values depend on each other /
+are independent</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">increasing / decreasing / no trend</td>
+<td style="text-align: left;">Upward trend / downward trend / no
+trend</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Trend / No trend</td>
+<td style="text-align: left;">Link with time / no link (Spearman)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">BREAK / Homogeneous</td>
+<td style="text-align: left;">Break detected / series without a
+break</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Means differ / No difference</td>
+<td style="text-align: left;">Different means / no difference</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Distributions differ</td>
+<td style="text-align: left;">The two periods have different values</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Variances differ / Equal variances</td>
+<td style="text-align: left;">Different variability / same
+variability</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Significant seasonality / No
+seasonality</td>
+<td style="text-align: left;">Clear season / no season</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Significant / Not significant</td>
+<td style="text-align: left;">Significant link / non-significant
+link</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Granger-causes / No causality</td>
+<td style="text-align: left;">Useful for prediction / not useful for
+prediction</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<h2 class="nonum" class="unnumbered" id="appendix-b.-glossary">Appendix B.
+Glossary</h2>
+<div class="center">
+<div class="scroll"><table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Term</th>
+<th style="text-align: left;">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Null hypothesis (<span
+class="math inline">\(H_0\)</span>)</td>
+<td style="text-align: left;">The “nothing is happening” position that
+the test tries to refute</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">p-value</td>
+<td style="text-align: left;">Probability of a result this extreme if
+<span class="math inline">\(H_0\)</span> is true</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Level <span
+class="math inline">\(\alpha\)</span></td>
+<td style="text-align: left;">Decision threshold (0.05)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Significant</td>
+<td style="text-align: left;"><span
+class="math inline">\(p&lt;\alpha\)</span>: the effect is probably
+real</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Non-parametric</td>
+<td style="text-align: left;">A test that works on ranks, without
+assuming a normal distribution</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Stationarity</td>
+<td style="text-align: left;">Properties that are stable over time</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Autocorrelation</td>
+<td style="text-align: left;">Resemblance between successive values</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Trend</td>
+<td style="text-align: left;">A lasting increase or decrease</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Break (change point)</td>
+<td style="text-align: left;">An abrupt change of level</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Homogeneous</td>
+<td style="text-align: left;">Without a break</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Seasonality</td>
+<td style="text-align: left;">A cycle that repeats every year</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Residual</td>
+<td style="text-align: left;">What remains after removing trend and
+season</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Confidence interval</td>
+<td style="text-align: left;">Range of plausible values for a
+parameter</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Correlation</td>
+<td style="text-align: left;">Statistical link between two
+variables</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<h2 class="nonum" class="unnumbered" id="appendix-c.-further-reading">Appendix C.
+Further reading</h2>
+<ul>
+<li><p>Mann, H. B. (1945) and Kendall, M. G. (1975): trend
+tests;</p></li>
+<li><p>Sen, P. K. (1968): slope estimator;</p></li>
+<li><p>Pettitt, A. N. (1979): change-point detection;</p></li>
+<li><p>Hamed, K. H. and Rao, A. R. (1998): modified
+Mann-Kendall.</p></li>
+</ul>
+</main></div>
+<script>
+const $=s=>document.querySelector(s),NS='http://www.w3.org/2000/svg';
+const erfc=x=>{const z=Math.abs(x),t=1/(1+.5*z),r=t*Math.exp(-z*z-1.26551223+t*(1.00002368+t*(.37409196+t*(.09678418+t*(-.18628806+t*(.27886807+t*(-1.13520398+t*(1.48851587+t*(-.82215223+t*.17087277)))))))));return x>=0?r:2-r};
+const med=a=>{a=[...a].sort((x,y)=>x-y);const m=a.length>>1;return a.length%2?a[m]:(a[m-1]+a[m])/2};
+/* ---- bell ---- */
+function bell(){const z=+$('#z').value,X=v=>300+v*67.5,Y=v=>190-v*420,f=v=>Math.exp(-v*v/2)/2.5066;
+ let L='';for(let v=-4;v<=4.001;v+=.05)L+=(L?'L':'M')+X(v).toFixed(1)+' '+Y(f(v)).toFixed(1);
+ const area=(a,b)=>{let d='M'+X(a)+' 190';for(let v=a;v<=b+1e-9;v+=.05)d+='L'+X(v).toFixed(1)+' '+Y(f(v)).toFixed(1);return d+'L'+X(b)+' 190Z'};
+ let t='';for(let k=-4;k<=4;k++)t+=`<text class="txt" x="${X(k)}" y="208" text-anchor="middle">${k}</text>`;
+ $('#bell').innerHTML=`<line class="ax" x1="20" y1="190" x2="580" y2="190"/><path class="tail" d="${area(z,4)}"/><path class="tail" d="${area(-4,-z)}"/><path class="curve" d="${L}"/>${t}<line class="ax" x1="${X(z)}" x2="${X(z)}" y1="40" y2="190" stroke-dasharray="4 3"/><line class="ax" x1="${X(-z)}" x2="${X(-z)}" y1="40" y2="190" stroke-dasharray="4 3"/><text class="txt" x="300" y="60" text-anchor="middle">if H₀ is true</text>`;
+ const p=erfc(z/Math.SQRT2);$('#zv').textContent=z.toFixed(2);
+ $('#pres').innerHTML=`p-value = ${p<.0001?'< 0.0001':p.toFixed(4)} → <span class="${p<.05?'ok':'no'}">${p<.05?'p < 0.05: reject H₀ (significant)':'p ≥ 0.05: not enough evidence'}</span>`}
+$('#z').oninput=bell;bell();
+/* ---- generic line chart ---- */
+function chart(el,xs,ys,extra){const W=600,H=260,l=48,r=14,t=14,b=34,x0=Math.min(...xs),x1=Math.max(...xs),y0=Math.min(...ys,...(extra.lines||[]).flat().map(q=>q[1])),y1=Math.max(...ys,...(extra.lines||[]).flat().map(q=>q[1])),pad=(y1-y0)*.1||1;
+ const X=v=>l+(v-x0)/(x1-x0)*(W-l-r),Y=v=>H-b-(v-(y0-pad))/(y1-y0+2*pad)*(H-b-t);let s='';
+ for(let i=0;i<=4;i++){const v=y0-pad+(y1-y0+2*pad)*i/4;s+=`<line class="gr" x1="${l}" x2="${W-r}" y1="${Y(v)}" y2="${Y(v)}"/><text class="txt" x="${l-6}" y="${Y(v)+4}" text-anchor="end">${v.toFixed(extra.dec||1)}</text>`}
+ const step=Math.ceil((x1-x0)/6);for(let v=x0;v<=x1;v+=step)s+=`<text class="txt" x="${X(v)}" y="${H-12}" text-anchor="middle">${v}</text>`;
+ s+=`<line class="ax" x1="${l}" x2="${W-r}" y1="${H-b}" y2="${H-b}"/><line class="ax" x1="${l}" x2="${l}" y1="${t}" y2="${H-b}"/>`;
+ if(extra.line)s+=`<polyline fill="none" stroke="var(--blue)" stroke-width="2" points="${xs.map((v,i)=>X(v)+','+Y(ys[i])).join(' ')}"/>`;
+ else s+=xs.map((v,i)=>`<circle class="pt" cx="${X(v)}" cy="${Y(ys[i])}" r="4.5"/>`).join('');
+ (extra.lines||[]).forEach((ln,i)=>s+=`<line class="${extra.cls[i]}" x1="${X(ln[0][0])}" y1="${Y(ln[0][1])}" x2="${X(ln[1][0])}" y2="${Y(ln[1][1])}"/>`);
+ if(extra.mark!=null)s+=`<line x1="${X(extra.mark)}" x2="${X(extra.mark)}" y1="${t}" y2="${H-b}" stroke="var(--red)" stroke-width="2" stroke-dasharray="6 4"/><text class="txt" fill="var(--red)" style="fill:var(--red)" x="${X(extra.mark)+6}" y="${t+12}">break</text>`;
+ el.innerHTML=s}
+/* ---- trend ---- */
+let temps=[14.1,14.6,14.2,14.9,14.7,15.1,14.9,15.5,15.2,15.8,15.6],outl=false;
+function trend(){const y=[...temps];if(outl)y[10]=12.4;const n=y.length,yr=y.map((_,i)=>2010+i);let S=0,sl=[];
+ for(let i=0;i<n;i++)for(let j=i+1;j<n;j++){S+=Math.sign(y[j]-y[i]);sl.push((y[j]-y[i])/(j-i))}
+ const m=med(sl),c=med(y.map((v,i)=>v-m*i)),mx=(n-1)/2,my=y.reduce((a,b)=>a+b)/n;
+ let sxy=0,sxx=0;y.forEach((v,i)=>{sxy+=(i-mx)*(v-my);sxx+=(i-mx)**2});const o=sxy/sxx,oc=my-o*mx;
+ chart($('#trend'),yr,y,{lines:[[[2010,c],[2020,c+m*10]],[[2010,oc],[2020,oc+o*10]]],cls:['sen','ols'],dec:1});
+ $('#tres').textContent=`S = ${S} · τ = ${(S/(n*(n-1)/2)).toFixed(2)} · Sen = ${m.toFixed(3)} °C/yr · OLS = ${o.toFixed(3)} °C/yr`}
+$('#out').onclick=()=>{outl=!outl;trend()};trend();
+/* ---- break (Pettitt) ---- */
+(function(){const n=31,yr=[...Array(n)].map((_,i)=>1990+i),y=yr.map(v=>(v<2005?80:70)+5*Math.sin(v*137*Math.PI/180));
+ const srt=y.map((v,i)=>[v,i]).sort((a,b)=>a[0]-b[0]),rk=Array(n);srt.forEach((q,k)=>rk[q[1]]=k+1);
+ let cum=0,K=0,tb=0;for(let t=1;t<n;t++){cum+=rk[t-1];const U=2*cum-t*(n+1);if(Math.abs(U)>K){K=Math.abs(U);tb=t}}
+ const p=Math.min(1,2*Math.exp(-6*K*K/(n**3+n**2))),yb=1990+tb;
+ chart($('#brk'),yr,y,{line:true,mark:yb-.5,dec:0});
+ $('#bres').innerHTML=`Pettitt: K = ${K.toFixed(0)}, p = ${p.toFixed(4)} → <span class="${p<.05?'ok':'no'}">${p<.05?'BREAK detected: new level from '+yb:'Homogeneous'}</span>`})();
+</script>
+</body>
+</html>

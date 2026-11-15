@@ -1,0 +1,12 @@
+flask
+flask-cors
+xarray
+zarr
+huggingface_hub
+fsspec
+numpy
+pandas
+scipy
+statsmodels
+joblib
+gunicorn
